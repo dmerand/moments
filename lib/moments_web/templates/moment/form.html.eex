@@ -1,8 +1,8 @@
 <div class="w-100 w-50-l f4">
   <%= form_for @changeset, @action, fn f -> %>
     <%= if @changeset.action do %>
-      <div class="alert alert-danger">
-        <p>Oops, something went wrong! Please check the errors below.</p>
+      <div class="alert alert-danger f5">
+        Oops, something went wrong! Please check the errors below.
       </div>
     <% end %>
 
@@ -13,7 +13,7 @@
       <div>
         <%= text_input f, :type, class: "input-reset ba b--green pa2 mb2 db w-100 w-50-ns" %>
       </div>
-      <div>
+      <div class="mt1 f6">
         <%= error_tag f, :type %>
       </div>
     </div>
@@ -22,16 +22,24 @@
       <div class="f5 b db mb2">
         <%= label f, :price %>
       </div>
-      <%= number_input f, :price, step: "any", class: "input-reset ba b--green pa2 mb2 db w-100 w-50-ns" %>
-      <%= error_tag f, :price %>
+      <div>
+        <%= number_input f, :price, step: "any", class: "input-reset ba b--green pa2 mb2 db w-100 w-50-ns" %>
+      </div>
+      <div class="mt2 f6">
+        <%= error_tag f, :price %>
+      </div>
     </div>
 
     <div class="mt4">
       <div class="f5 b db mb2">
         <%= label f, :entry %>
       </div>
-      <%= textarea f, :entry, rows: 10, class: "input-reset ba b--green pa2 mb2 db w-100" %>
-      <%= error_tag f, :entry %>
+      <div>
+        <%= textarea f, :entry, rows: 10, class: "input-reset ba b--green pa2 mb2 db w-100" %>
+      </div>
+      <div class="mt2 f6">
+        <%= error_tag f, :entry %>
+      </div>
     </div>
 
     <div class="mt4">

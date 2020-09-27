@@ -10,7 +10,7 @@
 
   <div class="mt4 flex flex-wrap athelas">
     <%= for moment <- @moments do %>
-      <div class="mr2 mr4-ns mb3 mb4-ns grow" style="width: 24rem;">
+      <div class="mr0 mr4-ns mb3 mb4-ns grow" style="width: 24rem;">
         <div class="pt4 pb3 ph4 ba b--green bg-striped shadow-4">
           <div class="bg-white pa3">
             <div class="f4"><%= view_entry moment %></div>
