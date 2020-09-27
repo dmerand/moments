@@ -1,0 +1,10 @@
+<h1>Moment</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.moment_path(@conn, :update, @moment)) %>
+
+<div class="mt3">
+  <%= link "delete", to: Routes.moment_path(@conn, :delete, @moment), method: :delete, data: [confirm: "Are you sure?"], class: "link mid-gray" %>
+</div>
+<div class="mt3">
+  <%= link "back", to: Routes.moment_path(@conn, :index), class: "link mid-gray" %>
+</div>

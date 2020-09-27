@@ -1,0 +1,41 @@
+<div class="w-100 w-50-l">
+  <%= form_for @changeset, @action, fn f -> %>
+    <%= if @changeset.action do %>
+      <div class="alert alert-danger">
+        <p>Oops, something went wrong! Please check the errors below.</p>
+      </div>
+    <% end %>
+
+    <div>
+      <div class="f6 b db mb2">
+        <%= label f, :type %>
+      </div>
+      <div>
+        <%= text_input f, :type, class: "input-reset ba b--green pa2 mb2 db w-100 w-50-ns" %>
+      </div>
+      <div>
+        <%= error_tag f, :type %>
+      </div>
+    </div>
+
+    <div class="mt3">
+      <div class="f6 b db mb2">
+        <%= label f, :price %>
+      </div>
+      <%= number_input f, :price, step: "any", class: "input-reset ba b--green pa2 mb2 db w-100 w-50-ns" %>
+      <%= error_tag f, :price %>
+    </div>
+
+    <div class="mt3">
+      <div class="f6 b db mb2">
+        <%= label f, :entry %>
+      </div>
+      <%= textarea f, :entry, rows: 5, class: "input-reset ba b--green pa2 mb2 db w-100" %>
+      <%= error_tag f, :entry %>
+    </div>
+
+    <div class="mt3">
+      <%= submit "Save", class: "f6 link dim br2 ph3 pv2 mb2 dib ba b--green bg-white pointer" %>
+    </div>
+  <% end %>
+</div>

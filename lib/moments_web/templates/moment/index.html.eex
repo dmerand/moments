@@ -1,0 +1,31 @@
+<section>
+  <div class="mt2 flex justify-between">
+    <h1 class="ma0 fw5">Catalog of Moments</h1>
+    <%= if @authenticated do %>
+      <div>
+        <%= link "+", to: Routes.moment_path(@conn, :new), class: "link mid-gray f2 fw7" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="mt4 flex flex-wrap athelas">
+    <%= for moment <- @moments do %>
+      <div class="mr2 mr4-ns mb3 mb4-ns grow" style="width: 24rem;">
+        <div class="pt4 pb3 ph4 ba b--green bg-striped shadow-4">
+          <div class="bg-white pa3">
+            <div class="f4"><%= view_entry moment %></div>
+            <div class="mt3 flex justify-between f6 ttu">
+              <div><%= moment.type %></div>
+              <div>$<%= moment.price %></div>
+            </div>
+          </div>
+          <%= if @authenticated do %>
+            <div class="mt3 i">
+              <%= link view_date(moment.inserted_at), to: Routes.moment_path(@conn, :edit, moment), class: "link mid-gray" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
