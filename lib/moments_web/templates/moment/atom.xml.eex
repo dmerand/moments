@@ -5,7 +5,7 @@
  <link href="<%= @url %>/atom.xml" rel="self"/>
  <link href="<%= @url %>/"/>
  <updated><%= NaiveDateTime.to_iso8601(@updated) %>Z</updated>
- <id><%= @url %></id>
+ <id><%= @url %>/</id>
  <author>
    <name>Donald L. Merand</name>
    <email>donald@merand.org</email>
