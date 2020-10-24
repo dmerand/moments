@@ -4,7 +4,7 @@
  <title>Moments</title>
  <link href="<%= @url %>/atom.xml" rel="self"/>
  <link href="<%= @url %>"/>
- <updated><%= NaiveDateTime.to_iso8601(@updated) %></updated>
+ <updated><%= NaiveDateTime.to_iso8601(@updated) %>Z</updated>
  <id><%= @url %></id>
  <author>
    <name>Donald L. Merand</name>
@@ -14,10 +14,9 @@
  <%= for moment <- @moments do %>
  <entry>
    <title><%= moment.type %></title>
-   <category><%= moment.type %></category>
    <link href="<%= "#{@url}/moments/#{moment.id}" %>"/>
-   <updated><%= NaiveDateTime.to_iso8601(moment.inserted_at) %></updated>
-   <id><%= moment.id %></id>
+   <updated><%= NaiveDateTime.to_iso8601(moment.inserted_at) %>Z</updated>
+   <id><%= "#{@url}/moments/#{moment.id}" %></id>
    <content type="html"><%= moment.entry |> html_escape() |> safe_to_string() %></content>
  </entry>
  <% end %>
