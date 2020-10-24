@@ -3,7 +3,7 @@
  
  <title>Moments</title>
  <link href="<%= @url %>/atom.xml" rel="self"/>
- <link href="<%= @url %>"/>
+ <link href="<%= @url %>/"/>
  <updated><%= NaiveDateTime.to_iso8601(@updated) %>Z</updated>
  <id><%= @url %></id>
  <author>

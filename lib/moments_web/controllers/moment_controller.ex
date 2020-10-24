@@ -10,7 +10,7 @@ defmodule MomentsWeb.MomentController do
       Entries.list_moments(shuffle: false)
       |> Enum.sort_by(& &1.inserted_at)
 
-    url = get_in(Application.get_env(MomentsWeb.Endpoint, "url"), ["host"])
+    url = MomentsWeb.Endpoint.url()
 
     updated =
       moments
