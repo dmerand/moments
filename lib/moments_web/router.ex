@@ -17,6 +17,7 @@ defmodule MomentsWeb.Router do
     pipe_through [:browser, :authenticate]
 
     get "/", MomentController, :index
+    get "/atom.xml", MomentController, :atom
     get "/logout", AuthenticationController, :delete
 
     resources "/authenticate", AuthenticationController, only: [:show]
@@ -44,10 +45,11 @@ defmodule MomentsWeb.Router do
     end
   end
 
-	defp authenticate(conn, _) do
+  defp authenticate(conn, _) do
     case get_session(conn, :authenticated) do
       nil ->
         assign(conn, :authenticated, false)
+
       true ->
         assign(conn, :authenticated, true)
     end

@@ -21,5 +21,4 @@ config :moments, MomentsWeb.Endpoint,
 # Print only warnings and errors during test
 config :logger, level: :warn
 
-config :moments, MomentsWeb.Authentication,
-  tokens: [ "letmein", "🔥" ]
+config :moments, MomentsWeb.Authentication, tokens: ["letmein", "🔥"]

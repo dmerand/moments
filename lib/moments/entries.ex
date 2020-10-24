@@ -17,9 +17,14 @@ defmodule Moments.Entries do
       [%Moment{}, ...]
 
   """
-  def list_moments do
-    Repo.all(Moment)
-    |> Enum.shuffle
+  def list_moments(opts \\ []) do
+    moments = Repo.all(Moment)
+
+    if Keyword.get(opts, :shuffle, true) do
+      Enum.shuffle(moments)
+    else
+      moments
+    end
   end
 
   @doc """

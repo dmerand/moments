@@ -9,6 +9,5 @@ defmodule Moments.Repo.Migrations.CreateMoments do
 
       timestamps()
     end
-
   end
 end

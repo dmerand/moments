@@ -29,7 +29,6 @@ config :moments, MomentsWeb.Endpoint,
     transport_options: [socket_opts: [:inet6]]
   ],
   secret_key_base: secret_key_base
-  
 
 # Custom and fancy auth system
 tokens =
