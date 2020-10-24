@@ -13,8 +13,8 @@
 
  <%= for moment <- @moments do %>
  <entry>
-   <title><%= moment.type %></title>
-   <link href="<%= "#{@url}/moments/#{moment.id}" %>"/>
+   <title><%= moment.type %>: <%= moment.entry |> html_escape() |> safe_to_string() %></title>
+   <link href="<%= @url %>/"/>
    <updated><%= NaiveDateTime.to_iso8601(moment.inserted_at) %>Z</updated>
    <id><%= "#{@url}/moments/#{moment.id}" %></id>
    <content type="html"><%= moment.entry |> html_escape() |> safe_to_string() %></content>
